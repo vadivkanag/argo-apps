@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: custdatasvc
+  namespace: {{ .Values.namespace }}
+  labels: 
+    {{- include "custdatasvc.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector: 
+    {{- include "custdatasvc.selectorLabels" . | nindent 4 }}
