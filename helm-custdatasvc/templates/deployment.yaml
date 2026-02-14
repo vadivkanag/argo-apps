@@ -47,6 +47,12 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           {{- with .Values.livenessProbe }}
+          env:
+            - name: MONGODB_DB_PWD
+              valueFrom:
+                secretKeyRef:
+                  name: custdatasvc-external-secret
+                  key: mongo_dev_pwd
           livenessProbe:
             {{- toYaml . | nindent 12 }}
           {{- end }}
