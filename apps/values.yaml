@@ -3,42 +3,16 @@ config:
     destination:
       server: https://kubernetes.default.svc
     source:
-      repoURL: https://github.com/argoproj/argocd-example-apps
-      targetRevision: master
+      # repoURL: https://github.com/argoproj/argocd-example-apps
+      repoURL: https://github.com/vadivkanag/argo-apps/edit/main/apps/values.yaml
+      targetRevision: main
 
 applications:
-  - name: blue-green
+  - name: helm-blue-green-custdatasvc
     tool:
       helm:
-        releaseName: blue-green
-  - name: guestbook
-  - name: helm-dependency
-    tool:
-      helm:
-        releaseName: helm-dependency
-  - name: helm-guestbook
+        releaseName: helm-blue-green-custdatasvc
+  - name: helm-custdatasvc
     tool:
       helm:
         releaseName: helm-guestbook
-  - name: helm-hooks
-  - name: jsonnet-guestbook
-  - name: jsonnet-guestbook-tla
-  - name: kustomize-guestbook
-  - name: plugin-kasane
-    path: plugins/kasane
-    tool:
-      plugin:
-        name: kasane
-  - name: plugin-kustomized-helm
-    path: plugins/kustomized-helm
-    tool:
-      plugin:
-        name: kustomized-helm
-  - name: plugin-nix
-    path: plugins/nix
-    tool:
-      plugin:
-        name: nix
-  - name: pre-post-sync
-  - name: sock-shop
-  - name: sync-waves
