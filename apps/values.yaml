@@ -3,7 +3,6 @@ config:
     destination:
       server: https://kubernetes.default.svc
     source:
-      # repoURL: https://github.com/argoproj/argocd-example-apps
       repoURL: https://github.com/vadivkanag/argo-apps/edit/main/apps/values.yaml
       targetRevision: main
 
