@@ -14,4 +14,4 @@ applications:
   - name: helm-custdatasvc
     tool:
       helm:
-        releaseName: helm-guestbook
+        releaseName: helm-custdatasvc
