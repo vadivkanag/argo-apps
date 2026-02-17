@@ -12,7 +12,7 @@ image:
   # repository: nginx
   repository: 932123397811.dkr.ecr.eu-west-1.amazonaws.com/digx-backend/cust-data-svc
   # This sets the pull policy for images.
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v1"
 
