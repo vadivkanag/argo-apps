@@ -19,9 +19,9 @@ image:
 externalSecrets:
   dataFrom:
     - secretRef:
-        name: "$MONGO_DEV_PWD"
+        name: "MONGO_DEV_PWD"
     - secretRef:
-        name: "$NEW_RELIC_PWD"
+        name: "NEW_RELIC_PWD"
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
