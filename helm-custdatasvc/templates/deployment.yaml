@@ -48,6 +48,8 @@ spec:
               protocol: TCP
           {{- with .Values.livenessProbe }}
           env:
+            - name: environment
+              value: "dev"
             - name: MONGODB_DB_PWD
               valueFrom:
                 secretKeyRef:
