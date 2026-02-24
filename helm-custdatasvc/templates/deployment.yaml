@@ -51,7 +51,7 @@ spec:
             - name: MONGODB_DB_PWD
               valueFrom:
                 secretKeyRef:
-                  name: custdatasvc-external-secret
+                  name: custdatasvc-secrets-manager-secret
                   key: mongo_dev_pwd
           livenessProbe:
             {{- toYaml . | nindent 12 }}
