@@ -48,13 +48,13 @@ spec:
               protocol: TCP
           {{- with .Values.livenessProbe }}
           env:
-            - name: environment
-              value: "dev"
-            - name: MONGODB_DB_PWD
-              valueFrom:
-                secretKeyRef:
-                  name: custdatasvc-secrets-manager-secret
-                  key: mongo_dev_pwd
+          - name: environment
+            value: "dev"
+          - name: MONGODB_DB_PWD
+            valueFrom:
+              secretKeyRef:
+                name: custdatasvc-secrets-manager-secret
+                key: mongo_dev_pwd
           livenessProbe:
             {{- toYaml . | nindent 12 }}
           {{- end }}
