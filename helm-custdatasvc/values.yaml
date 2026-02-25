@@ -149,14 +149,20 @@ livenessProbe:
   httpGet:
     path: /healthz
     port: 8080
-  initialDelaySeconds: 15
-  periodSeconds: 5
+  initialDelaySeconds: 80
+  timeoutSeconds: 50
+  periodSeconds: 30
+  successThreshold: 1
+  failureThreshold: 3
 readinessProbe:
   httpGet:
     path: /ready
     port: 8080
-  initialDelaySeconds: 15
-  periodSeconds: 5
+  initialDelaySeconds: 80
+  timeoutSeconds: 50
+  periodSeconds: 30
+  successThreshold: 1
+  failureThreshold: 3
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:
